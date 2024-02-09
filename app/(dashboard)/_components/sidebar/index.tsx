@@ -1,0 +1,13 @@
+import NewButton from "./new-button";
+
+type Props = {};
+
+const Sidebar = (props: Props) => {
+  return (
+    <aside className="fixed z-[1] left-0 bg-blue-950 h-full w-[60px] p-3 flex flex-col gap-y-4 text-white">
+      <NewButton />
+    </aside>
+  );
+};
+
+export default Sidebar;
