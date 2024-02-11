@@ -15,7 +15,6 @@ const SearchInput = () => {
     setValue(e.target.value);
   };
   useEffect(() => {
-    console.log(debounceValue);
     const url = qs.stringifyUrl(
       {
         url: "/",
