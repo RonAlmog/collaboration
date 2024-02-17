@@ -6,6 +6,7 @@ import Overlay from "./overlay";
 import { formatDistanceToNow } from "date-fns";
 import { useAuth } from "@clerk/nextjs";
 import Footer from "./footer";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface BoardCardProps {
   id: string;
@@ -51,3 +52,11 @@ const BoardCard = ({
 };
 
 export default BoardCard;
+
+BoardCard.Skeleton = function BoardCardSkeketon() {
+  return (
+    <div className="aspect-[100/127] rounded-lg justify-between overflow-hidden">
+      <Skeleton className="h-full w-full" />
+    </div>
+  );
+};
