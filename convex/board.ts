@@ -55,14 +55,14 @@ export const remove = mutation({
 export const update = mutation({
   args: {
     id: v.id("boards"),
-    newTitle: v.string(),
+    title: v.string(),
   },
   handler: async (ctx, args) => {
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) {
       throw new Error("Unauthorized");
     }
-    const title = args.newTitle.trim();
+    const title = args.title.trim();
     if (!title) {
       throw new Error("Title is required");
     }
@@ -71,7 +71,7 @@ export const update = mutation({
     }
 
     const board = await ctx.db.patch(args.id, {
-      title: args.newTitle,
+      title: args.title,
     });
 
     return board;
